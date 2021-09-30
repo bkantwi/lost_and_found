@@ -56,7 +56,7 @@
 				if($num == 1){
 					$_SESSION['user'] = $username;
 					$_SESSION['timeout'] = $currentTime + $expired;
-					header("location: dashboard.php");
+					header("location: books.php");
 				}else{
 					$error['failed'] = "*Login failed.";
 				}
