@@ -162,7 +162,7 @@
 		while ($stmt_paging->fetch()){ ?>
 			<tr>
 				<td><?php echo $data['news_heading'];?></td>
-				<td><img src="upload/thumbs/<?php echo $data['news_image']; ?>" width="50" height="50"/></td>
+				<td><img src="upload/<?php echo $data['news_image']; ?>" width="50" height="50"/></td>
 				<td><?php echo $data['news_date'];?></td>
 				<td><?php echo $data['category_name'];?></td>
 				<td width="20%">
