@@ -51,12 +51,12 @@
 				
 			// if delete data success back to reservation page
 			if($delete_result){
-				header("location: news.php");
+				header("location: books.php");
 			}
 		}		
 
 		if(isset($_POST['btnNo'])){
-			header("location: news.php");
+			header("location: books.php");
 		}
 
 	?>

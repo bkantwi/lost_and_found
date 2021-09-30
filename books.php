@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/custom.css">
-        <title>Simple News Publishing System</title>
+        <title>Lost and Found</title>
     </head>
     <body>
     	<div id="container">

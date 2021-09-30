@@ -1,7 +1,7 @@
 <?php
 	include_once('connect_database.php'); 
 	include_once('functions.php'); 
-	require_once("thumbnail_images.class.php");
+	// require_once("thumbnail_images.class.php");
 ?>
 <div id="content" class="container col-md-12">
 	<?php 
@@ -93,17 +93,17 @@
 				error_reporting(E_ERROR | E_PARSE);
 				copy($news_image, $unggah);
 									 
-											$thumbpath= 'upload/thumbs/'.$news_image;
-											$obj_img = new thumbnail_images();
-											$obj_img->PathImgOld = $unggah;
-											$obj_img->PathImgNew =$thumbpath;
-											$obj_img->NewWidth = 72;
-											$obj_img->NewHeight = 72;
-											if (!$obj_img->create_thumbnail_images()) 
-												{
-												echo "Thumbnail not created... please upload image again";
-													exit;
-												}	 
+											// $thumbpath= 'upload/thumbs/'.$news_image;
+											// $obj_img = new thumbnail_images();
+											// $obj_img->PathImgOld = $unggah;
+											// $obj_img->PathImgNew =$thumbpath;
+											// $obj_img->NewWidth = 72;
+											// $obj_img->NewHeight = 72;
+											// if (!$obj_img->create_thumbnail_images()) 
+											// 	{
+											// 	echo "Thumbnail not created... please upload image again";
+											// 		exit;
+											// 	}	 
 		
 				// insert new data to menu table
 				$sql_query = "INSERT INTO tbl_news (news_heading, cat_id, news_date, news_image, news_description)
@@ -128,16 +128,16 @@
 				}
 				
 				if($result){
-					$error['add_menu'] = " <span class='label label-primary'>Success added</span>";
+					$error['add_menu'] = " <span class='label label-primary'>Book added</span>";
 				}else {
-					$error['add_menu'] = " <span class='label label-danger'>Failed</span>";
+					$error['add_menu'] = " <span class='label label-danger'>Failed To Add</span>";
 				}
 			}
 				
 			}
 	?>
 	<div class="col-md-12">
-	<h1>Add News <?php echo isset($error['add_menu']) ? $error['add_menu'] : '';?></h1>
+	<h1>Add Missing Book <?php echo isset($error['add_menu']) ? $error['add_menu'] : '';?></h1>
 	<hr />
 	</div>
 

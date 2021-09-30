@@ -91,12 +91,12 @@
 				
 			// if delete data success back to reservation page
 			if($delete_category_result && $delete_menu_result){
-				header("location: category.php");
+				header("location: books.php");
 			}
 		}		
 		
 		if(isset($_POST['btnNo'])){
-			header("location: category.php");
+			header("location: books.php");
 		}
 		
 	?>
