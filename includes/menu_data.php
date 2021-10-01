@@ -41,7 +41,7 @@
 	?>
 
 <div class="col-md-9 col-md-offset-2">
-	<h1>Menu Detail</h1>
+	<h1>Book Details</h1>
 	<form method="post">
 		<table table class='table table-bordered'>
 			<tr class="row">
@@ -53,7 +53,7 @@
 				<td class="detail"><?php echo $data['news_date']; ?></td>
 			</tr>
 			<tr class="row">
-				<th class="detail">phone</th>
+				<th class="detail">Finder's Contact</th>
 				<td class="detail"><?php echo $data['phone']; ?></td>
 			</tr>
 			<tr class="row">
