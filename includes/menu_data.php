@@ -64,6 +64,12 @@
 				<th class="detail">Book Description</th>
 				<td class="detail"><?php echo $data['news_description']; ?></td>
 			</tr>
+			<tr class="row">
+				<th class="detail">Caution</th>
+				<td class="detail">Please do not meet late at night to collect item. Do not send money before <br > 
+					meeting up with the individual. Meet in a public place where people can see you. <br >Be cautious!
+				</td>
+			</tr>
 		</table>
 		
 	</form>
