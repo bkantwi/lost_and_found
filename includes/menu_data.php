@@ -14,7 +14,7 @@
 		$data = array();
 		
 		// get all data from menu table and category table
-		$sql_query = "SELECT nid, news_heading, news_date, news_status, category_name, news_image, news_description 
+		$sql_query = "SELECT nid, news_heading, news_date, phone, news_image, news_description 
 				FROM tbl_news m, tbl_news_category c
 				WHERE m.nid = ? AND m.cat_id = c.cid";
 		
@@ -29,7 +29,7 @@
 			$stmt->bind_result($data['nid'], 
 					$data['news_heading'], 
 					$data['news_date'], 
-					$data['news_status'], 
+					// $data['news_status'], 
 					$data['phone'],
 					$data['news_image'],
 					$data['news_description']
