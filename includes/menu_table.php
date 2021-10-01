@@ -21,12 +21,12 @@
 		}
 			
 		if(empty($keyword)){
-			$sql_query = "SELECT nid, news_heading, news_image, category_name, news_status, news_date 
+			$sql_query = "SELECT nid, news_heading, news_image, news_status, news_date, phone 
 					FROM tbl_news m, tbl_news_category c
 					WHERE m.cat_id = c.cid  
 					ORDER BY m.nid DESC";
 		}else{
-			$sql_query = "SELECT nid, news_heading, news_image, category_name, news_status, news_date 
+			$sql_query = "SELECT nid, news_heading, news_image, news_status, news_date, phone
 					FROM tbl_news m, tbl_news_category c
 					WHERE m.cat_id = c.cid AND news_heading LIKE ? 
 					ORDER BY m.nid DESC";
@@ -46,9 +46,10 @@
 			$stmt->bind_result($data['nid'], 
 					$data['news_heading'], 
 					$data['news_image'], 
-					$data['category_name'],
+					// $data['category_name'],
 					$data['news_status'], 
-					$data['news_date']
+					$data['news_date'],
+					$data['phone']
 					);
 			// get total records
 			$total_records = $stmt->num_rows;
@@ -111,9 +112,9 @@
 		if($total_records_paging == 0){
 	
 	?>
-	<h1>News Not Available
+	<h1>There are no missing books
 		<a href="add-menu.php">
-			<button class="btn btn-danger">Add News</button>
+			<button class="btn btn-danger">Add Book</button>
 		</a>
 	</h1>
 	<hr />
@@ -125,9 +126,9 @@
 
 	<div class="col-md-12">
 		<h1>
-			News List
+			Missing / Found Books
 			<a href="add-menu.php">
-				<button class="btn btn-danger">Add News</button>
+				<button class="btn btn-danger">Add Books</button>
 			</a>
 		</h1>
 		<hr/>
@@ -152,10 +153,10 @@
 	<div class="col-md-12">
 	<table table class='table table-hover'>
 		<tr>
-			<th>News heading</th>
-			<th>News Image</th>
-			<th>News Date</th>
-			<th>News Category</th>
+			<th>Book Title</th>
+			<th>Book Image</th>
+			<th>Date Found</th>
+			<th>Finder's Contact</th>
 			<th>Action</th>
 		</tr>
 	<?php 
@@ -164,19 +165,19 @@
 				<td><?php echo $data['news_heading'];?></td>
 				<td><img src="upload/<?php echo $data['news_image']; ?>" width="50" height="50"/></td>
 				<td><?php echo $data['news_date'];?></td>
-				<td><?php echo $data['category_name'];?></td>
+				<td><?php echo $data['phone'];?></td>
 				<td width="20%">
 					<a href="menu-detail.php?id=<?php echo $data['nid'];?>">
 						View
 					</a>&nbsp;
 
-					<a href="edit-menu.php?id=<?php echo $data['nid'];?>">
+					<!-- <a href="edit-menu.php?id=<?php echo $data['nid'];?>">
 						Edit
 					</a>&nbsp;
 
 					<a href="delete-menu.php?id=<?php echo $data['nid'];?>">
 						Delete
-					</a>
+					</a> -->
 				</td>
 			</tr>
 			</tr>
@@ -192,7 +193,7 @@
 	<h4>
 	<?php 
 		// for pagination purpose
-		$function->doPages($offset, 'news.php', '', $total_records, $keyword);?>
+		$function->doPages($offset, 'books.php', '', $total_records, $keyword);?>
 	</h4>
 	</div>
 	<div class="separator"> </div>

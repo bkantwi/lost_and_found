@@ -30,7 +30,7 @@
 					$data['news_heading'], 
 					$data['news_date'], 
 					$data['news_status'], 
-					$data['category_name'],
+					$data['phone'],
 					$data['news_image'],
 					$data['news_description']
 					);
@@ -45,34 +45,30 @@
 	<form method="post">
 		<table table class='table table-bordered'>
 			<tr class="row">
-				<th class="detail">ID</th>
-				<td class="detail"><?php echo $data['nid']; ?></td>
-			</tr>
-			<tr class="row">
-				<th class="detail">Name</th>
+				<th class="detail">Book Title</th>
 				<td class="detail"><?php echo $data['news_heading']; ?></td>
 			</tr>
 				<tr class="row">
-				<th class="detail">Status</th>
+				<th class="detail">Date Found</th>
 				<td class="detail"><?php echo $data['news_date']; ?></td>
 			</tr>
 			<tr class="row">
-				<th class="detail">Category</th>
-				<td class="detail"><?php echo $data['category_name']; ?></td>
+				<th class="detail">phone</th>
+				<td class="detail"><?php echo $data['phone']; ?></td>
 			</tr>
 			<tr class="row">
 				<th class="detail">Image</th>
 				<td class="detail"><img src="upload/<?php echo $data['news_image']; ?>" width="200" height="150"/></td>
 			</tr>
 			<tr class="row">
-				<th class="detail">news_description</th>
+				<th class="detail">Book Description</th>
 				<td class="detail"><?php echo $data['news_description']; ?></td>
 			</tr>
 		</table>
 		
 	</form>
 	<div id="option_menu">
-			<a href="edit-menu.php?id=<?php echo $ID; ?>"><button class="btn btn-primary">Edit</button></a>
+			<!-- <a href="edit-menu.php?id=<?php echo $ID; ?>"><button class="btn btn-primary">Edit</button></a> -->
 			<a href="delete-menu.php?id=<?php echo $ID; ?>"><button class="btn btn-danger">Delete</button></a>
 	</div>
 	

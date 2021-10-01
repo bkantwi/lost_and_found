@@ -1,7 +1,7 @@
 <?php
 	include_once('connect_database.php'); 
 	include_once('functions.php'); 
-	require_once("thumbnail_images.class.php");
+	// require_once("thumbnail_images.class.php");
 ?>
 <div id="content" class="container col-md-12">
 	<?php 
@@ -271,8 +271,8 @@
 				<div class="panel-body">
 					<input type="submit" class="btn-primary btn" value="Update" name="btnEdit" />
 				</div>
+			</div>
 		</div>
-	</div>
 	</form>
 	<div class="separator"> </div>
 </div>

@@ -27,6 +27,7 @@
 			$news_heading = $_POST['news_heading'];
 			$cid = $_POST['cid'];
 			$news_date = $_POST['news_date'];
+			$phone = $_POST['phone'];
 			$news_description = $_POST['news_description'];
 				
 			// get image info
@@ -106,17 +107,18 @@
 											// 	}	 
 		
 				// insert new data to menu table
-				$sql_query = "INSERT INTO tbl_news (news_heading, cat_id, news_date, news_image, news_description)
-						VALUES(?, ?, ?, ?, ?)";
+				$sql_query = "INSERT INTO tbl_news (news_heading, cat_id, news_date, phone, news_image, news_description)
+						VALUES(?, ?, ?, ?, ?, ?)";
 						
 				$upload_image = $news_image;
 				$stmt = $connect->stmt_init();
 				if($stmt->prepare($sql_query)) {	
 					// Bind your variables to replace the ?s
-					$stmt->bind_param('sssss', 
+					$stmt->bind_param('ssssss', 
 								$news_heading, 
 								$cid, 
 								$news_date, 
+								$phone,
 								$upload_image,
 								$news_description
 								);
@@ -154,6 +156,10 @@
 	    
 	    <label>News Date :</label><?php echo isset($error['news_date']) ? $error['news_date'] : '';?>
 		<input type="text" name="news_date" id="news_date" value="<?php if(isset($_GET['nid'])){echo $news_date['news_date'];}?>" class="form-control">
+		<br/>
+		
+		<label>Contact :</label><?php echo isset($error['phone']) ? $error['phone'] : '';?>
+		<input type="text" name="phone" id="phone" placeholder="Phone Number" class="form-control">
 		<br/>
 
 	    <label>Category :</label><?php echo isset($error['cid']) ? $error['cid'] : '';?>
