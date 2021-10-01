@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2021 at 05:54 AM
+-- Generation Time: Oct 01, 2021 at 06:06 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -35,17 +35,26 @@ CREATE TABLE `tbl_news` (
   `news_date` varchar(255) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `news_image` text NOT NULL,
-  `news_description` text NOT NULL
+  `news_description` text NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_news`
 --
 
-INSERT INTO `tbl_news` (`nid`, `news_heading`, `cat_id`, `news_status`, `news_date`, `phone`, `news_image`, `news_description`) VALUES
-(7, 'Things Fall Apart', 3, 1, '09-16-2021', '', '2795-2021-09-30.jpg', '<p>Missing</p>\r\n'),
-(12, 's', 3, 1, '09-01-2021', '32', '1049-2021-10-01.jpg', '<p>sdsf</p>\r\n'),
-(13, 'dsfj', 3, 1, '10-02-2021', '3424352', '6223-2021-10-01.jpg', '<p>fsgsfgd</p>\r\n');
+INSERT INTO `tbl_news` (`nid`, `news_heading`, `cat_id`, `news_status`, `news_date`, `phone`, `news_image`, `news_description`, `time`) VALUES
+(7, 'Things Fall Apart', 3, 1, '09-16-2021', '', '2795-2021-09-30.jpg', '<p>Missing</p>\r\n', '2021-10-01 04:00:34'),
+(12, 's', 3, 1, '09-01-2021', '32', '1049-2021-10-01.jpg', '<p>sdsf</p>\r\n', '2021-10-01 04:00:34'),
+(13, 'dsfj', 3, 1, '10-02-2021', '3424352', '6223-2021-10-01.jpg', '<p>fsgsfgd</p>\r\n', '2021-10-01 04:00:34'),
+(14, 'Some', 3, 1, '10-09-2021', '3243', '3992-2021-10-01.jpg', '<p>Somenew</p>\r\n', '2021-10-01 04:00:34'),
+(15, 'jdsjnfjh', 3, 1, '10-02-2021', '23454567', '3387-2021-10-01.png', '<p>wrewtre</p>\r\n', '2021-10-01 04:00:34'),
+(16, 'shdkfsn', 3, 1, '10-15-2021', '234354', '4036-2021-10-01.jpg', '<p>sfgdhgfh</p>\r\n', '2021-10-01 04:00:34'),
+(17, 'sdfjrl', 3, 1, '10-13-2021', '324567', '0831-2021-10-01.jpg', '<p>rtrytgdf</p>\r\n', '2021-10-01 04:00:34'),
+(18, 'sfgkn', 3, 1, '10-02-2021', '3456576', '8403-2021-10-01.jpg', '<p>fdgdsfa</p>\r\n', '2021-10-01 04:00:34'),
+(19, 'fgdjk', 3, 1, '10-08-2021', '3435', '9950-2021-10-01.jpg', '<p>fhgdfsdgfhg</p>\r\n', '2021-10-01 04:00:34'),
+(20, 'fgdfsda', 3, 1, '10-08-2021', '435678', '9023-2021-10-01.jpg', '<p>jhfgdfs</p>\r\n', '2021-10-01 04:00:34'),
+(21, 'dsgdhgn', 3, 1, '10-20-2021', '2435465', '0100-2021-10-01.jpg', '<p>ghjhsre4</p>\r\n', '2021-10-01 04:02:07');
 
 -- --------------------------------------------------------
 
@@ -100,7 +109,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`ID`, `Username`, `Password`, `Email`) VALUES
-(1, 'admin', 'd82494f05d6917ba02f7aaa29689ccb444bb73f20380876cb05d1f37537b7892', 'admin@gmail.com');
+(1, 'admin', '763110526e3093e4b6cfcbc7fc569adee8d51923b03410899733384f28b9f752', 'admin@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -138,7 +147,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_news`
 --
 ALTER TABLE `tbl_news`
-  MODIFY `nid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `nid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tbl_news_category`

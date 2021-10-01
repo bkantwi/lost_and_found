@@ -67,8 +67,8 @@
 	?>
 <div id="login_content" class="col-md-11 login">
   	<div class="col-md-4 col-md-offset-4">
-		<h2><center>Login Adminstrator</center></h2>
-		<center>Simple News Publishing System</center>
+		<h2><center>Login</center></h2>
+		<center>Lost and Found Website</center>
 		<p class="alert"><?php echo isset($error['failed']) ? $error['failed'] : '';?></p>
 	    <form method="post">
 	            <label>Username :</label>
