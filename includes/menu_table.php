@@ -74,12 +74,12 @@
 		}	
 		
 		if(empty($keyword)){
-			$sql_query = "SELECT nid, news_heading, news_image, category_name, news_status, news_date 
+			$sql_query = "SELECT nid, news_heading, news_image, news_date, phone
 					FROM tbl_news m, tbl_news_category c
 					WHERE m.cat_id = c.cid  
 					ORDER BY m.nid DESC LIMIT ?, ?";
 		}else{
-			$sql_query = "SELECT nid, news_heading, news_image, category_name, news_status, news_date 
+			$sql_query = "SELECT nid, news_heading, news_image, news_date, phone
 					FROM tbl_news m, tbl_news_category c
 					WHERE m.cat_id = c.cid AND news_heading LIKE ? 
 					ORDER BY m.nid DESC LIMIT ?, ?";
@@ -100,9 +100,10 @@
 			$stmt_paging->bind_result($data['nid'], 
 					$data['news_heading'], 
 					$data['news_image'], 
-					$data['category_name'],
-					$data['news_status'], 
-					$data['news_date']
+					// $data['category_name'],
+					// $data['news_status'], 
+					$data['news_date'],
+					$data['phone']
 					);
 			// for paging purpose
 			$total_records_paging = $total_records; 
